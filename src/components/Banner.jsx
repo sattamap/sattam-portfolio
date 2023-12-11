@@ -1,4 +1,5 @@
 import img from "../assets/sattam_image.png"
+import { MdDownload } from "react-icons/md";
 
 const Banner = () => {
   const resumeLink = 'https://drive.google.com/uc?id=16FB6l4UdhihWulwhedmqslRAU4My4jJo';
@@ -19,8 +20,9 @@ const Banner = () => {
               Sattam Chakma
             </h1>
             <p className="py-6">UI/UX Designer specializing in Shopify & Webflow.</p>
-            <button className="btn btn-primary" onClick={handleDownload}>
+            <button className="btn glass" onClick={handleDownload}>
               Get Resume
+              <MdDownload/>
             </button>
           </div>
         </div>
