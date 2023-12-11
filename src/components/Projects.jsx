@@ -1,6 +1,17 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Autoplay, Pagination } from 'swiper/modules';
 const projectsData = [
     { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-first-link", codeLink: "#your-first-code-link" },
     { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-second-link", codeLink: "#your-second-code-link" },
+    { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-third-link", codeLink: "#your-third-code-link" },
+    { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-third-link", codeLink: "#your-third-code-link" },
+    { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-third-link", codeLink: "#your-third-code-link" },
     { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-third-link", codeLink: "#your-third-code-link" },
 ];
 
@@ -11,9 +22,40 @@ const Projects = () => {
                 <p className="text-xs font-thin">Projects</p>
                 <h2 className="text-2xl font-semibold mb-10">My Completed Projects</h2>
             </div>
+            <Swiper
+        slidesPerView={4}
+        spaceBetween={15}
+        autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+          },
+        }}
+        modules={[Autoplay,Pagination]}
+        className="mySwiper"
+        
+      >
             <div className="flex justify-center gap-5">
                 {projectsData.map((project, index) => (
-                    <div key={index} className="relative w-96 overflow-hidden">
+                    <SwiperSlide key={index}  className="relative w-96 overflow-hidden">
+                   
                         <div className="group">
                             <figure>
                                 <img
@@ -37,9 +79,11 @@ const Projects = () => {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    
+                </SwiperSlide>
                 ))}
             </div>
+            </Swiper>
         </div>
     );
 };
