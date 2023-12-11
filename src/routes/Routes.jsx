@@ -22,7 +22,7 @@ import Portfolio from "../pages/Portfolio/Portfolio";
           element: <Home></Home>,
         },
         {
-          path: "/portfolio",
+          path: "portfolio",
           element:<Portfolio></Portfolio>,
         },
    
