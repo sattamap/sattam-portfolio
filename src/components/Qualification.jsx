@@ -28,8 +28,8 @@ const Qualification = () => {
                 <p className="text-xs font-thin ">Qualification</p>
                 <h2 className="text-2xl font-semibold mb-10">Education, Courses and Skills</h2>
             </div>
-          <div className="grid grid-cols-2  gap-5 mt-20 ml-20">
-            <div>
+          <div className="flex flex-row gap-5 mt-20 ">
+            <div className="w-1/2">
             <div className="bg-teal-800 w-1/6 text-center rounded-xl">
             <h2 className="text-xl text-white font-bold mb-10 p-2">Education</h2>
             </div>
@@ -55,7 +55,7 @@ const Qualification = () => {
            
 
 
-           <div >
+           <div className="w-1/2" >
            <div className="bg-teal-800 w-1/6 text-center rounded-xl">
             <h2 className="text-xl text-white font-bold mb-10 p-2">Courses</h2>
             </div>
