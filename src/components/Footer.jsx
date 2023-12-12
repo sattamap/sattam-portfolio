@@ -1,11 +1,11 @@
-
+import logo from "../assets/logo.png"
 
 const Footer = () => {
     return (
         <div>
             <footer className="footer p-10 bg-neutral text-neutral-content">
   <aside>
-    
+   <img src={logo} className="max-w-sm" alt="logo" />
     <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
   </aside> 
   <nav>
@@ -20,7 +20,7 @@ const Footer = () => {
 </footer>
 <div className="footer footer-center p-4 bg-neutral text-neutral-content">
   <aside>
-    <p>Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+    <p>Copyright © 2023 - All right reserved by <img src={logo} className="max-w-sm" alt="logo" /></p>
   </aside>
 </div>
         </div>

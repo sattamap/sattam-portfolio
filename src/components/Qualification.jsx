@@ -21,25 +21,41 @@ const Qualification = () => {
         }
         // Add more education entries as needed
     ];
+    const courseData = [
+        {
+          course: "Complete Web Development Course",
+          institution: "Programming Hero, Online",
+          duration: "Jun 2023 - Present",
+        },
+        {
+          course: "Web Development Course with PHP",
+          institution: "New Horizon, Chittagong, Onsite",
+          duration: "Sep 2020 - Dec 2020",
+        },
+        // Add more course entries as needed
+      ];
 
     return (
       <div>
-           <div className="flex flex-col justify-center items-center gap-5 mt-20">
-                <p className="text-xs font-thin ">Qualification</p>
-                <h2 className="text-2xl font-semibold mb-10">Education, Courses and Skills</h2>
-            </div>
-          <div className="flex flex-row gap-5 mt-20 ">
-            <div className="w-1/2">
-            <div className="bg-teal-800 w-1/6 text-center rounded-xl">
+        <div className="flex flex-col justify-center items-center gap-5 w-1/2 mx-auto bg-emerald-600 mt-20 mb-10 p-5">
+          <p className="text-sm font-medium bg-white p-2 rounded-lg">Qualification</p>
+          <h2 className="text-2xl font-semibold mb-10  bg-white p-2 px-4 rounded-lg">Education, Courses and Skills</h2>
+        </div>
+        
+          <div className="flex flex-col lg:flex-row gap-5 mt-20 mx-20">
+            <div className=" lg:w-1/2">
+            <div className="bg-teal-800 lg:w-1/6 mx-auto  text-center rounded-xl">
             <h2 className="text-xl text-white font-bold mb-10 p-2">Education</h2>
             </div>
-                <div className="border shadow-2xl p-4">
+                <div className="border shadow-2xl p-4 overflow-x-auto">
                 {educationData.map((education, index) => (
                 <div key={index} className="indicator ">
                     <span className="indicator-item indicator-start badge badge-secondary"></span>
                     <div className="mb-6 border-l border-l-red-700 pl-5">
-                        <div className="mt-3">
-                            <h3 className="text-lg font-semibold">{education.degree}</h3>
+                        <div className="mt-3 ">
+                        <div className="text-lg font-semibold ">
+                      {education.degree}
+                    </div>
                             <p className="text-gray-600">{education.university}</p>
                             <p className="text-gray-600">{education.duration}</p>
                         </div>
@@ -54,37 +70,35 @@ const Qualification = () => {
 
            
 
-
-           <div className="w-1/2" >
-           <div className="bg-teal-800 w-1/6 text-center rounded-xl">
-            <h2 className="text-xl text-white font-bold mb-10 p-2">Courses</h2>
-            </div>
-          <div className="border shadow-2xl p-4">
-          <div className="indicator">
-                <span className="indicator-item indicator-start badge badge-secondary"></span>
-
-                <div className="mb-6 border-l border-l-red-700 pl-5">
-
-                    <div className="mt-3">
-                        <h3 className="text-lg font-semibold">Complete Web Development Course</h3>
-                        <p className="text-gray-600">Programming Hero, Online</p>
-                        <p className="text-gray-600">Jun 2023 - Present</p>
-                    </div>
+            <div className="lg:w-1/2">
+        <div className="bg-teal-800 lg:w-1/6 mx-auto  text-center rounded-xl">
+          <h2 className="text-xl text-white font-bold mb-10 p-2">Courses</h2>
+        </div>
+        <div className="flex flex-col  border shadow-2xl p-4 overflow-x-auto">
+          {courseData.map((course, index) => (
+            <div key={index} className="indicator">
+              <span className="indicator-item indicator-start badge badge-secondary"></span>
+              <div className="mb-6 border-l border-l-red-700 pl-5">
+                <div className="mt-3">
+                  <h3 className="text-lg font-semibold">{course.course}</h3>
+                  <p className="text-gray-600">{course.institution}</p>
+                  <p className="text-gray-600">{course.duration}</p>
                 </div>
+              </div>
             </div>
-          </div>
-
-           </div>
+          ))}
+        </div>
+      </div>
 
           
         </div>
 
         <div>
-        <div className="bg-teal-800 w-1/6 mx-auto rounded-xl mt-10">
+        <div className="bg-teal-800 w-1/6 mx-auto rounded-xl mt-20">
             <h2 className="text-xl text-white font-bold text-center mb-10 p-2">Skills</h2>
             </div>
-           <div className="border shadow-2xl w-2/3 mx-auto p-4">
-           <div className="flex justify-center gap-10 mt-3 ">
+           <div className="border shadow-2xl w-4/5 mx-auto p-4 overflow-x-auto">
+           <div className="flex flex-col lg:flex-row justify-center gap-10 mt-3 ">
                 {Object.entries(skillsData).map(([category, skills], index) => (
                     <div key={index}>
                         <div className="indicator">
