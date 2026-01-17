@@ -5,6 +5,7 @@ import {
   import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 import Portfolio from "../pages/Portfolio/Portfolio";
+import About from "../pages/About/About";
  
 
   
@@ -20,6 +21,10 @@ import Portfolio from "../pages/Portfolio/Portfolio";
         {
           path: "/",
           element: <Home></Home>,
+        },
+        {
+          path: "about",
+          element:<About/>,
         },
         {
           path: "portfolio",

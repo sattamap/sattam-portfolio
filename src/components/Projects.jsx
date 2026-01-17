@@ -1,97 +1,128 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/pagination";
 
-// import required modules
-import { Pagination } from 'swiper/modules';
 const projectsData = [
-    { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-first-link", codeLink: "#your-first-code-link" },
-    { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-second-link", codeLink: "#your-second-code-link" },
-    { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-third-link", codeLink: "#your-third-code-link" },
-    { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-third-link", codeLink: "#your-third-code-link" },
-    { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-third-link", codeLink: "#your-third-code-link" },
-    { image: "https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg", liveLink: "#your-third-link", codeLink: "#your-third-code-link" },
+  {
+    image: "https://i.ibb.co.com/TB59Jfsm/bbsms5-imageonline-co-merged.png",
+    liveLink: "https://bbsms-5a136.web.app",
+    codeLink: "https://github.com/sattamap/betar-central-store-sms-client",
+  },
+  {
+    image: "https://picsum.photos/600/1400?random=2",
+    liveLink: "#",
+    codeLink: "#",
+  },
+  {
+    image: "https://picsum.photos/600/1400?random=3",
+    liveLink: "#",
+    codeLink: "#",
+  },
+  {
+    image: "https://picsum.photos/600/1400?random=4",
+    liveLink: "#",
+    codeLink: "#",
+  },
 ];
 
+// 🔹 Motion variants
+const headingVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 const Projects = () => {
-    return (
-        <div className="mb-20">
-              <div className="flex flex-col justify-center items-center gap-5 w-1/2 mx-auto bg-emerald-600 mt-20 mb-10 p-5">
-          <p className="text-sm font-medium bg-white p-2 rounded-lg">Projects</p>
-          <h2 className="text-2xl font-semibold mb-10  bg-white p-2 px-4 rounded-lg">My Completed Projects</h2>
-        </div>
-          
-            <Swiper
-        slidesPerView={1}
-        spaceBetween={10}
-        pagination={{
-          clickable: true,
-        }}
-        breakpoints={{
-          '@0.00': {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          '@0.75': {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          '@1.00': {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-          '@1.50': {
-            slidesPerView: 4,
-            spaceBetween: 50,
-          },
-        }}
-        modules={[Pagination]}
-        loop= {true}
-        className="mySwiper"
-      >
+  return (
+    <section className="py-20 bg-slate-50">
+      {/* Heading */}
+      <div className="text-center mb-16 max-w-5xl mx-auto px-4">
+        <motion.p
+          variants={headingVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="inline-flex items-center gap-2 text-lg font-semibold text-emerald-600
+          px-10 py-4 rounded-full
+          bg-white/60 backdrop-blur-md
+          shadow-[0_0_20px_rgba(16,185,129,0.35)]
+          mb-3"
+        >
+          <span className="w-4 h-3 bg-emerald-500 rounded-full animate-pulse"></span>
+          Projects
+        </motion.p>
 
+        <motion.h2
+          variants={headingVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-3xl md:text-4xl font-bold text-slate-900"
+        >
+          My Completed Projects
+        </motion.h2>
+      </div>
 
-            <div className="flex justify-center gap-5">
-                {projectsData.map((project, index) => (
-                    <SwiperSlide key={index}  className="relative w-96 overflow-hidden">
-                   
-                        <div className="group">
-                            <figure>
-                                <img
-                                    src={project.image}
-                                    alt="Shoes"
-                                    className="rounded-xl object-cover transition-transform transform group-hover:scale-110"
-                                />
-                            </figure>
-                            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-95">
-                                <a
-                                    href={project.liveLink}
-                                    className="btn btn-primary mb-2 transition-transform ease-in-out duration-1000 hover:translate-y-0"
-                                >
-                                    Live Link
-                                </a>
-                                <a
-                                    href={project.codeLink}
-                                    className="btn btn-secondary transition-transform ease-in-out duration-1000 hover:translate-y-0"
-                                >
-                                    Code Link
-                                </a>
-                            </div>
-                        </div>
-                    
-                </SwiperSlide>
-                ))}
-            </div>
-            </Swiper>
-        </div>
-    );
+      {/* Swiper */}
+      <div className="max-w-6xl mx-auto px-4">
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          loop
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          modules={[Pagination]}
+        >
+          {projectsData.map((project, index) => (
+            <SwiperSlide key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group relative rounded-2xl overflow-hidden shadow-xl bg-white"
+              >
+                {/* Fixed-height preview window */}
+                <div className="h-[420px] overflow-hidden relative">
+                  <img
+                    src={project.image}
+                    alt="Project Preview"
+                    className="w-full object-cover transform transition-transform duration-[4000ms] ease-linear group-hover:-translate-y-[60%]"
+                  />
+                </div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-4">
+                  <a
+                    href={project.liveLink}
+                    className="px-6 py-2 rounded-full bg-emerald-500 text-white font-medium hover:bg-emerald-600 transition"
+                  >
+                    Live Preview
+                  </a>
+                  <a
+                    href={project.codeLink}
+                    className="px-6 py-2 rounded-full bg-white text-slate-900 font-medium hover:bg-slate-200 transition"
+                  >
+                    Source Code
+                  </a>
+                </div>
+              </motion.div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
 };
 
 export default Projects;
-
-
-
-
-
