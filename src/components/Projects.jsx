@@ -9,22 +9,22 @@ const projectsData = [
   {
     image: "https://i.ibb.co.com/TB59Jfsm/bbsms5-imageonline-co-merged.png",
     liveLink: "https://bbsms-5a136.web.app",
-    codeLink: "https://github.com/sattamap/betar-central-store-sms-client",
+    //codeLink: "https://github.com/sattamap/betar-central-store-sms-client",
   },
   {
-    image: "https://picsum.photos/600/1400?random=2",
-    liveLink: "#",
-    codeLink: "#",
+    image: "https://i.ibb.co.com/ksY5ygYF/luxury-mermaid-151adc-netlify-app-Asus-Zenbook-Fold.png",
+    liveLink: "https://luxury-mermaid-151adc.netlify.app/",
+    //codeLink: "#",
   },
   {
-    image: "https://picsum.photos/600/1400?random=3",
-    liveLink: "#",
-    codeLink: "#",
+    image: "https://i.ibb.co.com/8g9hK85H/nobleclick-netlify-app-Asus-Zenbook-Fold.png",
+    liveLink: "https://nobleclick.netlify.app/",
+    //codeLink: "#",
   },
   {
     image: "https://picsum.photos/600/1400?random=4",
     liveLink: "#",
-    codeLink: "#",
+    //codeLink: "#",
   },
 ];
 
@@ -109,12 +109,12 @@ const Projects = () => {
                   >
                     Live Preview
                   </a>
-                  <a
+                  {/* <a
                     href={project.codeLink}
                     className="px-6 py-2 rounded-full bg-white text-slate-900 font-medium hover:bg-slate-200 transition"
                   >
                     Source Code
-                  </a>
+                  </a> */}
                 </div>
               </motion.div>
             </SwiperSlide>
